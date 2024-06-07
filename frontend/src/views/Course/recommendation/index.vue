@@ -9,7 +9,6 @@
     </select>
 
     <select v-model="selectedCourseType">
-      <option value="">所有类型</option>
       <option v-for="type in courseTypeOptions" :key="type.english" :value="type.english">
         {{ type.chinese }}
       </option>
@@ -30,7 +29,6 @@
         <li v-for="course in displayedCourses" :key="course.classId" @mouseover="highlightCourse(course.classId)"
             @mouseleave="unhighlightCourse()" @click="goToCourse(course.classId)"
             :class="{ highlighted: highlightedCourse === course.classId }"
-
         >
           <div>{{ course.className }}</div>
           <div>{{ course.instructor }} - {{ course.semester }} - {{ course.language }}</div>
@@ -64,7 +62,7 @@ import { useCoursesStore } from '@/store/modules/Course/index.ts';
 const router = useRouter(); // 获取 router 实例
 const coursesStore = useCoursesStore();
 const selectedMajor = ref('');
-const selectedCourseType = ref('');
+const selectedCourseType = ref('general');
 const highlightedCourse = ref(null);
 const currentPage = ref(1);
 const pageSize = 5;
@@ -93,18 +91,18 @@ const courseTypeOptions = [
 ];
 
 const selectedCourses = computed(() => {
-  const generalCourses = coursesStore.courseData['general'] || [];
-  const compulsoryCourses = coursesStore.courseData['compulsory'] || [];
-  const selectiveCourses = coursesStore.courseData['selective'] || [];
-  const humanityCourses = coursesStore.courseData['humanity'] || [];
-  const socialCourses = coursesStore.courseData['social'] || [];
-  const aestheticeCourses = coursesStore.courseData['aesthetic'] || [];
-
-  // 使用扩展运算符合并三种类型的课程数据
-  let courses = [...generalCourses, ...compulsoryCourses, ...selectiveCourses, ...humanityCourses, ...socialCourses, ...aestheticeCourses];
-  if (selectedCourseType.value) {
-    courses = coursesStore.courseData[selectedCourseType.value];
-  }
+  // const generalCourses = coursesStore.courseData['general'] || [];
+  // const compulsoryCourses = coursesStore.courseData['compulsory'] || [];
+  // const selectiveCourses = coursesStore.courseData['selective'] || [];
+  // const humanityCourses = coursesStore.courseData['humanity'] || [];
+  // const socialCourses = coursesStore.courseData['social'] || [];
+  // const aestheticeCourses = coursesStore.courseData['aesthetic'] || [];
+  //
+  // // 使用扩展运算符合并三种类型的课程数据
+  // let courses = [...generalCourses, ...compulsoryCourses, ...selectiveCourses, ...humanityCourses, ...socialCourses, ...aestheticeCourses];
+  // if (selectedCourseType.value) {
+  const courses = coursesStore.courseData[selectedCourseType.value] || [];
+  // }
   currentPage.value = 1;
 
   return courses.sort((a, b) => b[selectedSortScore.value] - a[selectedSortScore.value]);
