@@ -1,0 +1,66 @@
+[
+  {
+    "title": "学业课程",
+    "index": "1",
+    "icon": "el-icon-school",
+    "children": [
+      {
+        "title": "学业课程",
+        "items": [
+          {
+            "title": "课程信息",
+            "index": "/course/introduction"
+          },
+          {
+            "title": "课程推荐",
+            "index": "/course/recommendation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "学业论坛",
+    "index": "2",
+    "icon": "el-icon-reading",
+    "children": [
+      {
+        "title": "学业论坛",
+        "items": [
+          {
+            "title": "上传问题",
+            "index": "/study/post"
+          },
+          {
+            "title": "查看论坛",
+            "index": "/study/view"
+          },
+          {
+            "title": "我的问题",
+            "index": "/study/own"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "学业咨询",
+    "index": "3",
+    "icon": "el-icon-promotion",
+    "children": [
+      {
+        "title": "学业咨询",
+        "items": [
+          {
+            "title": "预约中心",
+            "index": "/tutoring/consultation"
+          },
+          {
+            "title": "我的预约",
+            "index": "/tutoring/reservation"
+          }
+        ]
+      }
+    ]
+  }
+]

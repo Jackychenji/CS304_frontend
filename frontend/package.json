@@ -1,0 +1,37 @@
+{
+  "name": "vue-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "ant-design-vue": "^4.1.2",
+    "axios": "^1.6.7",
+    "element-plus": "^2.5.6",
+    "js-cookie": "^3.0.5",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
+    "vue": "^3.4.19",
+    "vue-request": "^2.0.4",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^20.11.20",
+    "@types/vue-router": "^2.0.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "file-loader": "^1.1.7",
+    "pinia-plugin-persist": "^1.0.0",
+    "sass": "^1.71.1",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
+    "url-loader": "^0.6.2",
+    "vite": "^5.1.4",
+    "vue-tsc": "^1.8.27"
+  }
+}
